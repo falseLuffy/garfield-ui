@@ -1,14 +1,17 @@
 <template>
   <AdaptBox>
-    hello world
-    <div v-move></div>
+    <div class="parent" style="background:red;width:400px;height:600px;border:1px solid #999;border-radius: 6px;float:left;">
+      <div v-move.parent style="cursor: move">fasfasfa</div>
+    </div>
+    <div class="parent" style="background:red;width:400px;height:600px;border:1px solid #999;border-radius: 6px;float:left">
+      <div v-move.parent style="cursor: move">fasfasfa</div>
+    </div>
   </AdaptBox>
 </template>
 
 <script>
 // const component = require('../dist/build.js')
 import component from "../src/index.js";
-console.log(component)
 let {AdaptBox,move} = component;
 export default {
   name: "app",
@@ -16,6 +19,9 @@ export default {
     return {
       msg: "Welcome to Your Vue.js App"
     };
+  },
+  mounted(){
+    console.log(this.$refs.parent)
   },
   components: {
     AdaptBox:component.AdaptBox
@@ -27,4 +33,8 @@ export default {
 </script>
 
 <style>
+  body{
+    margin:0;
+    body:0;
+  }
 </style>
