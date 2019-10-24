@@ -10,9 +10,6 @@
 </template>
 
 <script>
-// const component = require('../dist/build.js')
-import component from "../src/index.js";
-let {AdaptBox,move} = component;
 export default {
   name: "app",
   data() {
@@ -22,12 +19,6 @@ export default {
   },
   mounted(){
     console.log(this.$refs.parent)
-  },
-  components: {
-    AdaptBox:component.AdaptBox
-  },
-  directives:{
-    move
   }
 };
 </script>
